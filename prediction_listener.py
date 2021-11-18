@@ -30,7 +30,7 @@ def callback(data):
     elif data.data == 'Ahead only':
         linear_x.value = 0.5;
         linear_y.value = 0.0; 
-        angular_z.value = 0;
+        angular_z.value = 0.0;
 
     elif data.data == 'Keep right':
         linear_x.value = 0.0;
@@ -58,7 +58,7 @@ def talker(x,y,z):
         twist.linear.x = linear_x.value;
         twist.linear.y = linear_y.value; twist.linear.z = 0;
         twist.angular.x = 0; twist.angular.y = 0;
-        angular_z.value = 0;
+        twist.angular.z = angular_z.value;
         pub.publish(twist)
         rate.sleep()
 
@@ -74,9 +74,9 @@ if __name__ == '__main__':
 
     twist = Twist()
     
-    linear_x = Value('d',0)
-    linear_y = Value('d',0)
-    angular_z = Value('d',0)
+    linear_x = Value('d',0.0)
+    linear_y = Value('d',0.0)
+    angular_z = Value('d',0.0)
 
     t = Process(target=talker, args = [linear_x, linear_y, angular_z,])
     l = Process(target=listener, args = [linear_x, linear_y, angular_z,])
