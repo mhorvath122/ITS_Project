@@ -1,2 +1,3 @@
 # ITS_Project
-ITS homework project BLAHBLAHBLAH
+It's an university project for the subject Intelligent Transport Systems.
+
