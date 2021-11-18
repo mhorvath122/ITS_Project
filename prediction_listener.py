@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# It's a basic listener app, just a code snippet, not part of the ITS project
 
 import rospy
 from std_msgs.msg import String
@@ -9,52 +8,8 @@ from multiprocessing import Process, Value
 
 
 def callback(data):
-    #rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
-
 
     #Robot controll logic:
-    
-    """
-    print(data.data)
-    if data.data == 'Stop':
-        twist.linear.x = 0;
-        twist.linear.y = 0; twist.linear.z = 0;
-        twist.angular.x = 0; twist.angular.y = 0;
-        twist.angular.z = 0;
-
-    elif data.data == 'Turn right ahead':
-        twist.linear.x = 0.5;
-        twist.linear.y = 0; twist.linear.z = 0;
-        twist.angular.x = 0; twist.angular.y = 0;
-        twist.angular.z = 0.3;
-
-    elif data.data == 'Turn left ahead':
-        twist.linear.x = 0.5;
-        twist.linear.y = 0; twist.linear.z = 0;
-        twist.angular.x = 0; twist.angular.y = 0;
-        twist.angular.z = -0.3;
-
-    elif data.data == 'Ahead only':
-        twist.linear.x = 0.5;
-        twist.linear.y = 0; twist.linear.z = 0;
-        twist.angular.x = 0; twist.angular.y = 0;
-        twist.angular.z = 0;
-
-    elif data.data == 'Keep right':
-        twist.linear.x = 0;
-        twist.linear.y = 0.5; twist.linear.z = 0;
-        twist.angular.x = 0; twist.angular.y = 0;
-        twist.angular.z = 0;
-
-    elif data.data == 'Keep left':
-        twist.linear.x = 0;
-        twist.linear.y = -0.5; twist.linear.z = 0;
-        twist.angular.x = 0; twist.angular.y = 0;
-        twist.angular.z = 0;
-
-    else:
-        pass
-"""
 
     print(data.data)
     if data.data == 'Stop':
@@ -104,9 +59,7 @@ def talker(x,y,z):
         twist.linear.y = linear_y.value; twist.linear.z = 0;
         twist.angular.x = 0; twist.angular.y = 0;
         angular_z.value = 0;
-        #rospy.loginfo("hello from talker")
         pub.publish(twist)
-        #print(twist)
         rate.sleep()
 
 def listener(x,y,z):
