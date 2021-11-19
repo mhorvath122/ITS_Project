@@ -5,7 +5,7 @@ It's an university project for the subject Intelligent Transport Systems.
 
 The main purpose of the project is an implementation of a robot control system, based on traffic sign recognition. For traffic sign recognition we used deep learning technology. The controlling of the robot uses Robot Operation System (ROS) framework. 
 
-Important files are this GitHub repository:
+Important files are in this GitHub repository:
 * mydata folder: it's the dataset, we merged it from 2 different datasets.
 * ITs.py: Code to train our model.
 * labels.csv: Contains the 6 different labels of the traffic signs, what we're like to recognize.
